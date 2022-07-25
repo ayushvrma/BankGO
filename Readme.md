@@ -1,4 +1,11 @@
-# Database Schema
+# To Setup:
+`make postgres` : to generate a new Docker Container of postgres official image 12-alpine version to reduce the filesize.
+
+`make createdb` : to create a new postgresql database.
+
+`migrate -path db/migration -database "postgresql://root:1234@localhost:5432/BankGo?sslmode=disable" --verbose up` : to initalise it with tables
+
+<!-- # Database Schema
 ![db schema](assets/db%20schema.png)
 
 # Go Image
@@ -27,4 +34,14 @@ To install the CLI tool:
 1. Upstream file is used to do changes to the schema. (1->2->3)
 2. Downstream is used to revert the changes done to the schema by Upstream.(1<-2<-3)
 
+`docker exec -it some-postgres12 /bin/sh`
+`createdb --username=root --owner=root BankGO`
 
+OR
+
+`docker exec -it some-postgres12 createdb --username=root --owner=root BankGo`
+`docker exec -it some-postgres12 psql -U root BankGo`
+
+
+then create a Makefile.
+`touch Makefile` -->
