@@ -1,9 +1,13 @@
 # To Setup:
-`make postgres` : to generate a new Docker Container of postgres official image 12-alpine version to reduce the filesize.
+To generate a new Docker Container of postgres official image 12-alpine version to reduce the filesize:
 
-`make createdb` : to create a new postgresql database.
+`make postgres` 
 
-`migrate -path db/migration -database "postgresql://root:1234@localhost:5432/BankGo?sslmode=disable" --verbose up` : to initalise it with tables
+To create a new postgresql database:
+`make createdb` 
+
+To initalise it with tables:
+`migrate -path db/migration -database "postgresql://root:1234@localhost:5432/BankGo?sslmode=disable" --verbose up`
 
 <!-- # Database Schema
 ![db schema](assets/db%20schema.png)
