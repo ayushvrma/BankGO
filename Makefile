@@ -13,6 +13,9 @@ migrateup:
 migratedown:
 	migrate -path db/migration -database "postgresql://root:1234@localhost:5432/BankGo?sslmode=disable" --verbose down
 
-.PHONY: postgres createdb dropdb migrateup migratedown
+sqlc:
+	sqlc generate
+
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc
 
 # In terms of Make, a phony target is simply a target that is always out-of-date, so whenever you ask make <phony_target>, it will run, independent from the state of the file system. Some common make targets that are often phony are: all, install, clean, distclean, TAGS, info, check.
