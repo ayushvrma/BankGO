@@ -6,6 +6,11 @@ To generate a new Docker Container of postgres official image 12-alpine version 
 To create a new postgresql database:
 `make createdb` 
 
+To initalise it with tables:
+`make migrateup`
+
+To generate sqlc files:
+`make sqlc`
 <!-- To initalise it with tables:
 `migrate -path db/migration -database "postgresql://root:1234@localhost:5432/BankGo?sslmode=disable" --verbose up` -->
 
